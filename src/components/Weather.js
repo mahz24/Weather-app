@@ -48,6 +48,7 @@ const Weather = () => {
         <img
           id="img"
           src={`https://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`}
+          alt=""
         ></img>
       )}
 
