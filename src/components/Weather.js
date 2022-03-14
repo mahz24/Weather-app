@@ -35,7 +35,7 @@ const Weather = () => {
   console.log(weather);
   document.body.style = "backgroun:#5DADE2";
   return (
-    <div className="card-weather">
+    <div className="card">
       <h2 id="title">Weather app</h2>
       <p id="location">
         <b>
