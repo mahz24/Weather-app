@@ -4,25 +4,26 @@
 body {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCW915cDbYv16klsT7PS2AT69T2Wq_bzG4L_g-YWD6FVpRfs6tvlda0kZJY-yjmPaZwCI&usqp=CAU);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .App {
   display: flex;
   justify-content: center;
-  padding: auto;
+  align-items: center;
 }
 
 .card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 30%;
+  width: 40%;
   text-align: center;
   border-radius: 20px;
   box-shadow: 5px rgb(0, 0, 0.3);
   background-color: rgb(216, 215, 215);
-
+  margin: 10% 10% 10% 10%;
   color: black;
+  font-size: 25px;
 }
 
 h2 {
@@ -56,10 +57,19 @@ button {
   border-radius: 10px;
   width: 60% !important;
   padding: 5px;
-  margin: auto;
-  background-color: #5dade2;
+  margin: 10px auto;
+  background-color: #555758;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 85%;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 321px) {
+  .card {
+    width: 90%;
+    font-size: 12px;
+  }
 }
