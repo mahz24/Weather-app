@@ -1,10 +1,28 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body {
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCW915cDbYv16klsT7PS2AT69T2Wq_bzG4L_g-YWD6FVpRfs6tvlda0kZJY-yjmPaZwCI&usqp=CAU);
+
+/* body{
+  background-image: url('https://conceptodefinicion.de/wp-content/uploads/2020/08/clima.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 100%;
+} */
+
+/* .image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+} */
+
+body{
+  background-image: url("https://www.lifeder.com/wp-content/uploads/2021/10/clima-tipos.jpg");
+  background-color: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover
 }
 
 .App {
@@ -14,13 +32,15 @@ body {
 }
 
 .card {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 40%;
   text-align: center;
   border-radius: 20px;
   box-shadow: 5px rgb(0, 0, 0.3);
-  background-color: rgb(216, 215, 215);
+  background-color: #C6C3C2;
+  
   margin: 10% 10% 10% 10%;
   color: black;
   font-size: 25px;
