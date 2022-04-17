@@ -35,49 +35,63 @@ const Weather = () => {
   console.log(weather);
   document.body.style = "backgroun:#5DADE2";
   return (
-    <div className="card">
-      <h2 id="title">Weather app</h2>
-      <p id="location">
-        <b>
-          {weather.name}, {weather.sys?.country}{" "}
-        </b>
-      </p>
-      {weather.weather?.[0].icon === undefined ? (
-        <p>Loading...</p>
-      ) : (
-        <img
-          id="img"
-          src={`https://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`}
-          alt=""
-        ></img>
-      )}
+    <section className="card-container">
+      <div className="card">
+        <div className="location-container color-basic">
+          <h2 className="title">Weather app</h2>
+          <p className="location">
+            <b>
+              {weather.name}, {weather.sys?.country}{" "}
+            </b>
+          </p>
+        </div>
 
-      <ul id="information">
-        <p className="values">
-          <b>"{weather.weather?.[0].description}"</b>
+        <div className="description-container">
+          {weather.weather?.[0].icon === undefined ? (
+            <p>Loading...</p>
+          ) : (
+            <img
+              id="img"
+              src={`https://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`}
+              alt=""
+            ></img>
+          )}
+
+          <div className="info-container">
+            <ul>
+              <p className="values color-basic">
+                <b>"{weather.weather?.[0].description}"</b>
+              </p>
+              <li className="values">
+                <i className="fa-solid fa-wind color-basic"></i>
+                <b className="color-basic">Wind speed</b> {weather.wind?.speed}{" "}
+                m/s
+              </li>
+              <li className="values">
+                <i className="fa-solid fa-cloud color-basic"></i>
+                <b className="color-basic">Clouds:</b> {weather.clouds?.all}%
+              </li>
+              <li className="values">
+                <i className="fa-solid fa-temperature-half color-basic"></i>
+                <b className="color-basic">Pressures</b>{" "}
+                {weather.main?.pressure}mb
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="dg-fh">
+          {isFaren ? (
+            <b>{`${((temp - 273) * 1.8 + 32).toFixed(0)} °F `}</b>
+          ) : (
+            <b>{`${(temp - 273).toFixed(0)} °C`}</b>
+          )}
         </p>
-        <li className="values">
-          <i className="fa-solid fa-wind"></i>
-          <b>Wind speed</b> {weather.wind?.speed} m/s
-        </li>
-        <li className="values">
-          <i className="fa-solid fa-cloud"></i>
-          <b>Clouds:</b> {weather.clouds?.all}%
-        </li>
-        <li className="values">
-          <i className="fa-solid fa-temperature-half"></i>
-          <b>Pressures</b> {weather.main?.pressure}mb
-        </li>
-      </ul>
-      <b>
-        {isFaren ? (
-          <p>{`${((temp - 273) * 1.8 + 32).toFixed(0)} °F `}</p>
-        ) : (
-          <p>{`${(temp - 273).toFixed(0)} °C`}</p>
-        )}
-      </b>
-      <button onClick={changeDegree}>Degrees °F/°G</button>
-    </div>
+        <div className="button-container">
+          <button onClick={changeDegree}>Degrees °F/°G</button>
+        </div>
+      </div>
+    </section>
   );
 };
 
